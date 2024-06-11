@@ -1,0 +1,12 @@
+.widgets {
+  padding: 0;
+  list-style-type: none;
+  width: 18em;
+  white-space: nowrap;
+}
+
+.selected {
+  background-color: rgb(63, 0, 0);
+  border-radius: 4px;
+  margin-left: 2em;
+}
