@@ -1,49 +1,49 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { Widget } from '../widget';
+import { dog } from '../dog';
 import { FormsModule } from '@angular/forms';
-import { WidgetService } from '../widget.service';
+import { dogService } from '../dog.service';
 
 @Component({
-  selector: 'app-widget-detail',
+  selector: 'app-dog-detail',
   standalone: true,
   imports: [NgIf, FormsModule],
-  templateUrl: './widget-detail.component.html',
-  styleUrl: './widget-detail.component.css'
+  templateUrl: './dog-detail.component.html',
+  styleUrl: './dog-detail.component.css'
 })
-export class WidgetDetailComponent {
-  widget?: Widget;
+export class dogDetailComponent {
+  dog?: dog;
 
   constructor(
     private route: ActivatedRoute,
-    private widgetService: WidgetService
+    private dogService: dogService
   ) {}
 
-  getWidget = (): void => {
-    const widgetId = this.route.snapshot.paramMap.get('id');
+  getdog = (): void => {
+    const dogId = this.route.snapshot.paramMap.get('id');
 
-    if (widgetId) {
-      this.widgetService.getWidget(widgetId)
-        .subscribe((widget: Widget) => {
-          this.widget = widget;
+    if (dogId) {
+      this.dogService.getdog(dogId)
+        .subscribe((dog: dog) => {
+          this.dog = dog;
         });
     }
   }
 
-  updateWidget = (): void => {
-    const widgetId = this.route.snapshot.paramMap.get('id');
+  updatedog = (): void => {
+    const dogId = this.route.snapshot.paramMap.get('id');
 
-    if (widgetId && this.widget) {
-      this.widgetService.updateWidget(widgetId, this.widget)
-        .subscribe((widget: Widget) => {
-          this.widget = widget;
+    if (dogId && this.dog) {
+      this.dogService.updatedog(dogId, this.dog)
+        .subscribe((dog: dog) => {
+          this.dog = dog;
         });
     }
     
   }
 
   ngOnInit(): void {
-    this.getWidget();
+    this.getdog();
   }
 }

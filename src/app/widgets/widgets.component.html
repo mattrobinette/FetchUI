@@ -2,12 +2,12 @@
 
 
 <div class="container">
-  <h2>List of Widgets : </h2>
-  <ul class="widgets">
-    <li *ngFor="let widget of currentPageWidgets">
-      <button type="button" (click)="deleteWidget(widget.id)">X</button>
-      <a routerLink="/widgets/{{widget.id}}">
-        <span>{{ widget.name }}</span> ( <span style="color: {{ widget.color }}">{{ widget.color }}</span> )
+  <h2>List of dogs : </h2>
+  <ul class="dogs">
+    <li *ngFor="let dog of currentPagedogs">
+      <button type="button" (click)="deletedog(dog.id)">X</button>
+      <a routerLink="/dogs/{{dog.id}}">
+        <span>{{ dog.name }}</span> ( <span style="color: {{ dog.color }}">{{ dog.color }}</span> )
       </a>
     </li>
   </ul>

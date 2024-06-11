@@ -1,4 +1,4 @@
-export interface Widget {
+export interface dog {
   id: string;
   name: string;
   color: string;

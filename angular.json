@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "widgets-ui": {
+    "dogs-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/widgets-ui",
+            "outputPath": "dist/dogs-ui",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "widgets-ui:build:production"
+              "buildTarget": "dogs-ui:build:production"
             },
             "development": {
-              "buildTarget": "widgets-ui:build:development"
+              "buildTarget": "dogs-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "widgets-ui:build"
+            "buildTarget": "dogs-ui:build"
           }
         },
         "test": {

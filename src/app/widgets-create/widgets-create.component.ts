@@ -3,29 +3,29 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
-import { WidgetService } from '../widget.service';
-import { Widget } from '../widget';
+import { dogService } from '../dog.service';
+import { dog } from '../dog';
 
 @Component({
-  selector: 'app-widgets-create',
+  selector: 'app-dogs-create',
   standalone: true,
   imports: [FormsModule, NgIf],
-  templateUrl: './widgets-create.component.html',
-  styleUrl: './widgets-create.component.css'
+  templateUrl: './dogs-create.component.html',
+  styleUrl: './dogs-create.component.css'
 })
-export class WidgetsCreateComponent {
-  widget = {} as Widget;
+export class dogsCreateComponent {
+  dog = {} as dog;
   error?: string;
 
-  constructor(private widgetService: WidgetService,
+  constructor(private dogService: dogService,
     private router: Router) {}
 
-  createWidget = (): void => {
-    this.widgetService.createWidget(this.widget)
+  createdog = (): void => {
+    this.dogService.createdog(this.dog)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {
         if (!this.error) {
-          this.router.navigate(['/widgets']);
+          this.router.navigate(['/dogs']);
         }
       });
   }

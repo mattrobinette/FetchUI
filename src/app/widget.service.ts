@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Widget } from './widget';
-import { WIDGETS } from './mock-widgets';
+import { dog } from './dog';
+import { dogS } from './mock-dogs';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -8,33 +8,33 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class WidgetService {
-  private widgetsUrl = '/api/v1/widgets';
+export class dogService {
+  private dogsUrl = '/api/v1/dogs';
 
   constructor(
     private messageService: MessageService,
     private http: HttpClient,
     ) { }
 
-  getWidgets = (): Observable<Widget[]> => {
+  getdogs = (): Observable<dog[]> => {
     this.messageService.add('About to fetch data from API');
-    return this.http.get<Widget[]>(this.widgetsUrl);
+    return this.http.get<dog[]>(this.dogsUrl);
   }
 
-  getWidget = (id: string): Observable<Widget> => {
+  getdog = (id: string): Observable<dog> => {
     this.messageService.add(`Fetched data for ID ${id} from API`);
-    return this.http.get<Widget>(`${this.widgetsUrl}/${id}`);
+    return this.http.get<dog>(`${this.dogsUrl}/${id}`);
   }
 
-  deleteWidget = (id: string): Observable<Object> => {
-    return this.http.delete(`${this.widgetsUrl}/${id}`);
+  deletedog = (id: string): Observable<Object> => {
+    return this.http.delete(`${this.dogsUrl}/${id}`);
   }
 
-  updateWidget = (id: string, widget: Widget): Observable<Widget> => {
-    return this.http.put<Widget>(`${this.widgetsUrl}/${id}`, widget);
+  updatedog = (id: string, dog: dog): Observable<dog> => {
+    return this.http.put<dog>(`${this.dogsUrl}/${id}`, dog);
   }
 
-  createWidget = (widget: Widget): Observable<Widget> => {
-    return this.http.post<Widget>(`${this.widgetsUrl}`, widget)
+  createdog = (dog: dog): Observable<dog> => {
+    return this.http.post<dog>(`${this.dogsUrl}`, dog)
   }
 }

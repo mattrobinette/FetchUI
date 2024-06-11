@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Widget } from '../widget';
-import { WidgetService } from '../widget.service';
+import { dog } from '../dog';
+import { dogService } from '../dog.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -12,19 +12,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  widgets: Widget[] = [];
+  dogs: dog[] = [];
 
-  constructor(private widgetsService: WidgetService) {}
+  constructor(private dogsService: dogService) {}
 
-  getTop5WidgetsByWeight = (): void => {
-    this.widgetsService.getWidgets().subscribe((widgets) => {
+  getTop5dogsByWeight = (): void => {
+    this.dogsService.getdogs().subscribe((dogs) => {
       // TODO: Only return top 5 from API
-      this.widgets = widgets.slice(0, 5);
+      this.dogs = dogs.slice(0, 5);
     });
   }
 
   // TODO: Research as arrow function
   ngOnInit(): void {
-    this.getTop5WidgetsByWeight();
+    this.getTop5dogsByWeight();
   }
 }

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { WidgetsComponent } from './widgets/widgets.component';
+import { dogsComponent } from './dogs/dogs.component';
 import { MessagesComponent } from './messages/messages.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, WidgetsComponent, MessagesComponent],
+  imports: [RouterOutlet, RouterLink, dogsComponent, MessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

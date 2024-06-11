@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { WidgetsComponent } from './widgets/widgets.component';
+import { dogsComponent } from './dogs/dogs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
-import { WidgetsCreateComponent } from './widgets-create/widgets-create.component';
+import { dogDetailComponent } from './dog-detail/dog-detail.component';
+import { dogsCreateComponent } from './dogs-create/dogs-create.component';
 
 export const routes: Routes = [
-  { path: 'widgets', component: WidgetsComponent },
+  { path: 'dogs', component: dogsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'widgets/:id', component: WidgetDetailComponent },
-  { path: 'widgets-create', component: WidgetsCreateComponent },
+  { path: 'dogs/:id', component: dogDetailComponent },
+  { path: 'dogs-create', component: dogsCreateComponent },
 ];
