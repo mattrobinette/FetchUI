@@ -1,2 +1,2 @@
 # FetchUI
-UI for ArCA MEAN project
+UI for ArCA MEAN project 2024
