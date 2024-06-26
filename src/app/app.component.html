@@ -1,39 +1,25 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-expand-md bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="https://uca.edu/arcoding"><img src="./assets/images/arca-gem-icon.svg"
-        style="height: 1.5em; width: 1.5em;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
-        </li>
-        <li class="nav-item" routerLink="/dogs">
-          <a class="nav-link">dogs</a>
-        </li>
-        <li class="nav-item" routerLink="/dogs-create">
-          <a class="nav-link">Create</a>
-        </li>
-        <!--li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
-        </li -->
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
+    <a class="navbar-brand me-auto" routerLink="/dashboard"><img src="./assets/images/dog.svg"
+        style="height: 1.5em; width: 1.5em;" class="me-3">Fetch</a>
+      <div class="login">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li *ngIf="!authService.getToken()" class="nav-item">
+                  <a class="nav-link" (click)="logout()">Login</a>
+              </li>
+              <li *ngIf="authService.getToken()" class="nav-item">
+                  <a class="nav-link" (click)="logout()">Logout</a>
+              </li>
+          </ul>
+      </div>
   </div>
 </nav>
+<div class="second-nav shadow-sm">
+    <nav class="nav" aria-label="Secondary navigation">
+        <a routerLink="/browse" class="nav-link">Browse Dogs</a>
+        <a *ngIf="authService.getToken() || authService.hasRole('readWrite')" class="nav-item" routerLink="/dogs" class="nav-link">Manage Dogs</a>
+        <a *ngIf="authService.getToken() || authService.hasRole('readWrite')" class="nav-item" routerLink="/dogs/create" class="nav-link">Add a Dog</a>
+    </nav>
+</div>
 
 <router-outlet></router-outlet>
-<app-messages></app-messages>

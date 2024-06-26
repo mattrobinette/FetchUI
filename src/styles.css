@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #1a1a1a;
-  color: #cecece;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
 }
 
 h1 {
@@ -33,3 +33,104 @@ div.picture-frame {
   border-radius: 1em;
 }
 
+.form-text {
+  color: #74829c !important;
+}
+
+label.required:after {
+  content: " * Required";
+  font-size: 0.65rem;
+  color: #fc4c5e;
+}
+
+/* Page Header Start */
+.page-header {
+  --page-header-padding-y: 1.5rem;
+  --page-header-padding-x: 1.25rem;
+  --page-header-bg: transparent;
+  background-color: var(--page-header-bg)
+}
+
+.page-title {
+  padding: var(--page-header-padding-y) 0;
+  position: relative
+}
+
+.page-subtitle {
+  --spacer-2: 0.625rem;
+  margin-left: var(--spacer-2)
+}
+
+.page-subtitle:before {
+  content: "/";
+  margin-right: calc(var(--spacer-2) + .25rem)
+}
+/* Page Header Start */
+
+.legend {
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+  line-height: 1.75;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid transparent;
+  padding-bottom: 1rem;
+  padding-top: 0;
+}
+
+.second-nav {
+  height: 2.75rem;
+}
+
+.second-nav .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.second-nav .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+  color: #6c757d;
+}
+
+.second-nav .nav-link:hover {
+  color: #4D2D7F;
+}
+
+.second-nav .active {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.navbar.bg-primary {
+  background-color: #4E2D7F !important;
+  color: #fff;
+}
+
+.navbar.bg-primary .navbar-brand,.navbar.bg-primary .navbar-brand a {
+  color: #fff
+}
+
+.navbar.bg-primary .navbar-nav>.nav-link,.navbar.bg-primary .navbar-nav>.nav-item>.nav-link,.navbar.bg-primary .navbar-nav>.nav>.nav-item>.nav-link {
+  color: #fff
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #4e2d7f;
+}
+
+.btn-white:hover {
+  background-color: rgba(0, 0, 0, .25);
+  color: #fff;
+}

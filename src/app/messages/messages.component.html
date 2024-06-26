@@ -1,9 +1,14 @@
-<div *ngIf="messageService.messages.length">
-  <h2>Messages : </h2>
-  <button type="button" class="btn-danger" (click)="messageService.clear()">
-    Clear Messages
-  </button>
-  <div *ngFor="let message of messageService.messages">
-    {{ message }}
-  </div>
+<div *ngIf="messageService.messages.length" class="container">
+    <div class="mt-3">
+        <div class="d-flex align-items-center justify-content-between flex-wrap">
+            <h5 class="card-title">Messages : </h5>
+            <button type="button" class="btn btn-warning" (click)="messageService.clear()">
+                Clear Messages
+            </button>
+        </div>
+
+        <div *ngFor="let message of messageService.messages">
+            {{ message }}
+        </div>
+    </div>
 </div>

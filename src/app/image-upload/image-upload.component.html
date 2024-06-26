@@ -1,0 +1,6 @@
+<div class="image-upload-container mb-3">
+    <form enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+        <input type="file" name="dogImage" (change)="onFileSelected($event)">
+        <button type="submit" class="btn btn-primary">Upload Image</button>
+    </form>
+</div>

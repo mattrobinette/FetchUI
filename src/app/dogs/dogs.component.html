@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="page-header mb-3">
+        <div class="page-header-content">
+            <div class="page-title d-flex align-items-baseline flex-wrap">
+                <h5 class="mb-0">Dog Management</h5>
+                <span class="page-subtitle text-muted">Dogs</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Adoption Fee</th>
+                    <th scope="col">Photos</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let dog of currentPageDogs">
+                    <td>{{ dog.name }}</td>
+                    <td>{{ dog.breed }}</td>
+                    <td>{{ dog.gender }}</td>
+                    <td>{{ dog.color }}</td>
+                    <td>{{ dog.size }}</td>
+                    <td>{{ dog.location }}</td>
+                    <td>${{ dog.adoptionFee ? dog.adoptionFee: 0 }}</td>
+                    <td>{{ dog.photos ? 'Yes' : 'No'}}</td>
+                    <td>
+                        <a routerLink="/dogs/view/{{dog.id}}" class="btn btn-light m-1"><i class="bi bi-eye me-1"></i>
+                            View</a>
+                        <a routerLink="/dogs/update/{{dog.id}}" class="btn btn-light m-1"><i class="bi bi-pencil me-1"></i>
+                            Update</a>
+                        <button type="button" (click)="deleteDog(dog.id)" class="btn btn-danger m-1"><i
+                                class="bi bi-trash me-1"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer">
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                <button type="button" (click)="previousPage()" class="btn btn-light"><i class="bi bi-chevron-left me-1"></i> Prev</button>
+                <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
+                <button type="button" (click)="nextPage()" class="btn btn-light">Next <i class="bi bi-chevron-right ms-1"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

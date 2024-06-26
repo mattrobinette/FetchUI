@@ -1,0 +1,91 @@
+<div *ngIf="dog" class="container">
+    <div *ngIf="error">
+        <a class="list-group-item list-group-item-action list-group-item-danger">
+            {{ error }}
+        </a>
+    </div>
+
+    <div class="page-header mb-3">
+        <div class="page-header-content">
+            <div class="page-title d-flex align-items-baseline flex-wrap">
+                <h5 class="mb-0">Dog Management</h5>
+                <span class="page-subtitle text-muted">View</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex align-item-sm-center flex-sm-nowrap">
+                        <div>
+                            <h6 class="card-title">Basic Information</h6>
+                            <ul class="list list-unstyled text-muted">
+                                <li>Name: {{ dog.name}}</li>
+                                <li>Age: {{ dog.age}}</li>
+                                <li>Breed: {{ dog.breed}}</li>
+                                <li>Gender: {{ dog.gender}}</li>
+                            </ul>
+
+                            <h6 class="card-title">Physical Attributes</h6>
+                            <ul class="list list-unstyled text-muted">
+                                <li>Size: {{ dog.size}}</li>
+                                <li>Weight: {{ dog.weight}}</li>
+                                <li>Color: {{ dog.color}}</li>
+                            </ul>
+
+                            <h6 class="card-title">Health Information</h6>
+                            <ul class="list list-unstyled text-muted">
+                                <li>Health Issues: {{ dog.healthIssues}}</li>
+                                <li>Vaccinated: {{ dog.vaccinated}}</li>
+                                <li>Spayed or Neutered: {{ dog.spayedNeutered}}</li>
+                            </ul>
+
+                            <h6 class="card-title">Behavioral Information</h6>
+                            <ul class="list list-unstyled text-muted">
+                                <li>Temperament: {{ dog.temperament}}</li>
+                                <li>Training: {{ dog.training}}</li>
+                            </ul>
+
+                            <h6 class="card-title">Adoption Information</h6>
+                            <ul class="list list-unstyled text-muted">
+                                <li>Adoption Fee: ${{ dog.adoptionFee ? dog.adoptionFee : 0 }}</li>
+                                <li>Location: {{ dog.location}}</li>
+                                <li>Availability Date: {{ dog.availabilityDate}}</li>
+                            </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="col-6">
+            <div class="row text-center text-lg-start">
+                <app-image-upload [id]="dog.id"></app-image-upload>
+                <div *ngFor="let photo of dog.photos" class="col-lg-3 col-md-4 col-6">
+                    <div class="d-block mb-4 h-100">
+                        <img  [src]="baseUrl + photo" alt="{{ photo }}" class="img-fluid img-thumbnail">
+                    </div>
+                </div>
+            </div>
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div *ngFor="let photo of dog.photos" class="carousel-item active">
+                        <img [src]="baseUrl + photo" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

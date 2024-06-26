@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="page-header mb-3">
+        <div class="page-header-content">
+            <div class="page-title d-flex align-items-baseline flex-wrap">
+                <h5 class="mb-0">User Management</h5>
+                <span class="page-subtitle text-muted">Users</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of currentPageUsers">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <a routerLink="/users/view/{{user.id}}" class="btn btn-light m-1"><i class="bi bi-eye me-1"></i>
+                            View</a>
+                        <a routerLink="/users/update/{{user.id}}" class="btn btn-light m-1"><i class="bi bi-pencil me-1"></i>
+                            Update</a>
+                        <button type="button" (click)="deleteUser(user.id)" class="btn btn-danger m-1"><i
+                                class="bi bi-trash me-1"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer">
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                <button type="button" (click)="previousPage()" class="btn btn-light"><i class="bi bi-chevron-left me-1"></i> Prev</button>
+                <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
+                <button type="button" (click)="nextPage()" class="btn btn-light">Next <i class="bi bi-chevron-right ms-1"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

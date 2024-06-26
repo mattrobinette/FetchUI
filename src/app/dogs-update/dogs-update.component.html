@@ -1,0 +1,149 @@
+<div *ngIf="dog" class="container">
+    <div *ngIf="error">
+        <a class="list-group-item list-group-item-action list-group-item-danger">
+            {{ error }}
+        </a>
+    </div>
+
+    <div class="page-header mb-3">
+        <div class="page-header-content">
+            <div class="page-title d-flex align-items-baseline flex-wrap">
+                <h5 class="mb-0">Dog Management</h5>
+                <span class="page-subtitle text-muted">Update Dog</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="legend">Basic Information</h5>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input [(ngModel)]="dog.name" class="form-control" id="name" placeholder="The dog's name">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input [(ngModel)]="dog.age" class="form-control" id="age" type="number" placeholder="The age of the dog">
+                    <div id="ageHelp" class="form-text">Required</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="breed" class="form-label">Breed</label>
+                    <input [(ngModel)]="dog.breed" class="form-control" id="breed" placeholder="The breed of the dog">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="gender" class="form-label required">Gender</label>
+                    <!--<input [(ngModel)]="dog.gender" class="form-control" id="gender" type="number" placeholder="Gender">-->
+                    <select [(ngModel)]="dog.gender" id="gender" class="form-select">
+                        <option value="">Choose a Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <div id="genderHelp" class="form-text">The gender of the dog</div>
+                </div>
+            </div>
+
+
+            <h5 class="legend">Physical Attributes</h5>
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="size" class="form-label">Size</label>
+                    <select [(ngModel)]="dog.size" id="size" class="form-select">
+                        <option value="">Choose a Size</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                    <div id="sizeHelp" class="form-text">The size of the dog</div>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="weight" class="form-label">Weight</label>
+                    <input [(ngModel)]="dog.weight" class="form-control" id="weight" type="number"
+                           placeholder="The weight of the dog">
+                    <div id="weightHelp" class="form-text">Maximum of 150.</div>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="color" class="form-label">Color</label>
+                    <select [(ngModel)]="dog.color" class="form-select" name="color" id="color">
+                        <option value="">Choose a Color</option>
+                        <option value="Black">Black</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Cream">Cream</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Grey">Grey</option>
+                        <option value="Red">Red</option>
+                        <option value="White">White</option>
+                    </select>
+                    <div id="colorHelp" class="form-text">The primary color of the dog's coat</div>
+                </div>
+            </div>
+
+            <h5 class="legend">Health Information</h5>
+
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="healthIssues" class="form-label">Health Issues</label>
+                    <textarea [(ngModel)]="dog.healthIssues" class="form-control" id="healthIssues" rows="3"></textarea>
+                    <div id="healthIssuesHelp" class="form-text">Any known health issues or special needs</div>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="form-check">
+                        <input [(ngModel)]="dog.vaccinated" class="form-check-input" type="checkbox" value="" id="vaccinated">
+                        <label class="form-check-label" for="vaccinated">
+                            Is the dog is up-to-date on vaccinations?
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input [(ngModel)]="dog.spayedNeutered" class="form-check-input" type="checkbox" value="" id="spayedNeutered">
+                        <label class="form-check-label" for="spayedNeutered">
+                            Is the dog has been spayed or neutered?
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="legend">Behavioral Information</h5>
+
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="temperament" class="form-label">Temperament</label>
+                    <input [(ngModel)]="dog.temperament" class="form-control" id="temperament" placeholder="The dog's temperament">
+                    <div id="temperamentHelp" class="form-text">General temperament (friendly, shy, energetic, etc.)</div>
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="training" class="form-label">Training</label>
+                    <input [(ngModel)]="dog.training" class="form-control" id="training" placeholder="Training Received">
+                    <div id="trainingHelp" class="form-text">Any training the dog has received (house-trained, obedience training, etc.)</div>
+                </div>
+            </div>
+
+            <h5 class="legend">Adoption Information</h5>
+
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="adoptionFee" class="form-label">Adoption Fee</label>
+                    <input [(ngModel)]="dog.adoptionFee" class="form-control" id="adoptionFee" type="number" placeholder="The fee required for adoption">
+                    <div id="adoptionFeeHelp" class="form-text">The fee required for adoption</div>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input [(ngModel)]="dog.location" class="form-control" id="location" placeholder="Location">
+                    <div id="locationFeeHelp" class="form-text">The current location of the dog</div>
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="availabilityDate" class="form-label">Availability Date</label>
+                    <input [(ngModel)]="dog.availabilityDate" class="form-control" id="availabilityDate" type="date" placeholder="When the dog will be available for adoption">
+                    <div id="availabilityDateHelp" class="form-text">When the dog will be available for adoption</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer text-end">
+            <a routerLink="/dogs" class="btn btn-danger me-1"><i class="bi bi-x me-1"></i> Cancel</a>
+            <button type="button" class="btn btn-primary" (click)="updateDog()"><i class="bi bi-check me-1"></i> Update Dog</button>
+        </div>
+    </div>
+</div>
