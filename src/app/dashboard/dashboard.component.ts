@@ -26,7 +26,7 @@ export class DashboardComponent {
 
   currentPageDogs: dog[] = [];
   currentPage = 0;
-  pageSize = 5;
+  pageSize = 10;
   pageCount = 0;
 
   constructor(private dogService: dogService) {}

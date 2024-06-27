@@ -23,7 +23,7 @@ export class LoginComponent {
       if (token) {
         this.result = 'Success!';
         this.authService.storeToken(token.token);
-        this.router.navigate(['/widgets']);
+        this.router.navigate(['/dogs']);
       } 
     },
     () => {

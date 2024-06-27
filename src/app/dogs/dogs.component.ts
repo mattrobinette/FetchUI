@@ -16,10 +16,11 @@ import { RouterLink } from '@angular/router';
 })
 export class dogsComponent {
   dogs: dog[] = [];
-
+  result: string = '';
+  resultColor: string = 'green';
   currentPageDogs: dog[] = [];
   currentPage = 0;
-  pageSize = 5;
+  pageSize = 10;
   pageCount = 0;
 
   constructor(private dogService: dogService, private messageService: MessageService) {}
@@ -54,6 +55,7 @@ export class dogsComponent {
   deleteDog = (id: string): void => {
     this.dogService.deleteDog(id).subscribe((res) => {
       this.getDogs();
+      this.result = 'Success!';
     });
   }
 

@@ -16,12 +16,15 @@ import { dog } from '../dog';
 export class dogsCreateComponent {
   dog = {color: '', gender: '', size: ''} as dog;
   error?: string;
+  result: string = '';
+  resultColor: string = 'green';
 
   constructor(private dogService: dogService,
     private router: Router) {}
 
   createDog = (): void => {
     this.error = ''; // Reset the error before attempting to create the dog
+    this.result = 'Success!';
     this.dogService.createDog(this.dog)
       .pipe(catchError(this.handleError))
       .subscribe((res) => {

@@ -16,6 +16,8 @@ import {catchError, Observable, of} from "rxjs";
 export class dogsUpdateComponent {
   dog?: dog;
   error?: string;
+  result: string = '';
+  resultColor: string = 'green';
 
   constructor(
     private route: ActivatedRoute,
@@ -41,6 +43,7 @@ export class dogsUpdateComponent {
           .pipe(catchError(this.handleError))
           .subscribe((dog: dog) => {
             this.dog = dog;
+            this.result = 'Success!';
           });
     }
 

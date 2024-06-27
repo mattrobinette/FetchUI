@@ -54,24 +54,36 @@
         </div>
         <div class="col-9">
             <div class="row">
-                <div *ngFor="let dog of currentPageDogs" class="col-4 g-3">
-                    <div class="card">
-                        <img class="card-img-top img-fluid" src="https://placehold.co/600x400" alt="">
-
-                        <a routerLink="/dogs/view/{{dog.id}}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dog.name }}</h5>
-                            </div>
-
-                            <div class="card-footer d-flex flex-wrap justify-content-center">
-                                <span class="badge rounded-pill text-bg-light fw-normal m-1">{{ dog.size }}</span>
-                                <span class="badge rounded-pill text-bg-light fw-normal m-1">{{ dog.gender }}</span>
-                                <span class="badge rounded-pill text-bg-light fw-normal m-1">{{ dog.breed }}</span>
-                                <span class="badge rounded-pill text-bg-light fw-normal m-1">{{ dog.location }}</span>
-                            </div>
-                        </a>
-
-                    </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Breed</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Adoption Fee</th>
+                        <th scope="col">Photos</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let dog of currentPageDogs">
+                        <td>{{ dog.name }}</td>
+                        <td>{{ dog.breed }}</td>
+                        <td>{{ dog.gender }}</td>
+                        <td>{{ dog.color }}</td>
+                        <td>{{ dog.size }}</td>
+                        <td>{{ dog.location }}</td>
+                        <td>${{ dog.adoptionFee ? dog.adoptionFee: 0 }}</td>
+                        <td>{{ dog.photos ? 'Yes' : 'No'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex align-items-center justify-content-between flex-wrap">
+                    <button type="button" (click)="previousPage()" class="btn btn-light"><i class="bi bi-chevron-left me-1"></i> Prev</button>
+                    <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
+                    <button type="button" (click)="nextPage()" class="btn btn-light">Next <i class="bi bi-chevron-right ms-1"></i></button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,8 @@
+#container{
+  width:220vh;
+  height:60vh;
+  background-image: url(../assets/images/DSC_4423.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
