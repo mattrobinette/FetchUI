@@ -1,6 +1,7 @@
 #container{
-  width:220vh;
-  height:60vh;
+  width: 250vh;
+  max-width: 100%;
+  height: 60vh;
   background-image: url(../assets/images/DSC_4423.jpg);
   background-position: top;
   background-repeat: no-repeat;
