@@ -1,9 +1,9 @@
 #container{
-  width: 250vh;
-  max-width: 100%;
+  width: auto;
   height: 60vh;
-  background-image: url(../assets/images/DSC_4423.jpg);
+  background-image: url(../assets/images/fetchbannernew.jpg);
   background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 50%;
 }
