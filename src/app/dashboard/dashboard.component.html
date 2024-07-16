@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container vh-100">
     <div class="page-header">
         <div class="page-header-content">
             <div class="page-title d-flex align-items-baseline flex-wrap">
                 <h5 class="mb-0">Fetch Adoption</h5>
-                <span class="page-subtitle text-muted">Available Dogs</span>
+                <span class="page-subtitle text-muted">Find the perfect match for your furever home</span>
             </div>
         </div>
     </div>
@@ -14,8 +14,16 @@
             <div class="filters text-center mb-3">
                 <select [(ngModel)]="filters.breed" class="form-control mb-2">
                     <option value="">Select Breed</option>
+                    <option value="Beagle Mix">Beagle Mix</option>
+                    <option value="Border Terrier">Border Terrier</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="German Shepard">German Shepard</option>
                     <option value="Golden Retriever">Golden Retriever</option>
-                    <option value="Labador Retriever">Labador Retriever</option>
+                    <option value="Lab Mix">Lab Mix</option>
+                    <option value="Miniature Schnauzer">Miniature Schnauzer</option>
+                    <option value="Pitbull">Pitbull</option>
+                    <option value="Shepherd Mix">Shepherd Mix</option>
+                    <option value="Siberian Husky">Siberian Husky</option>
                 </select>
                 <select [(ngModel)]="filters.gender" class="form-control mb-2">
                     <option value="">Select Gender</option>
@@ -23,13 +31,13 @@
                     <option value="Female">Female</option>
                 </select>
                 <select [(ngModel)]="filters.size" class="form-control mb-2">
-                    <option value="">Choose a Size</option>
+                    <option value="">Select Size</option>
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
                 </select>
                 <select [(ngModel)]="filters.color" class="form-control mb-2">
-                    <option value="">Choose a Color</option>
+                    <option value="">Select Color</option>
                     <option value="Black">Black</option>
                     <option value="Blue">Blue</option>
                     <option value="Brown">Brown</option>
@@ -39,11 +47,19 @@
                     <option value="Red">Red</option>
                     <option value="White">White</option>
                 </select>
+                <select [(ngModel)]="filters.location" class="form-control mb-2">
+                    <option value="">Select Location</option>
+                    <option value="Conway, AR">Conway, AR</option>
+                    <option value="Denver, CO">Denver, CO</option>
+                    <option value="Maumelle, AR">Maumelle, AR</option>
+                    <option value="North Little Rock, AR">North Little Rock, AR</option>
+                    <option value="San Francisco, CA">San Francisco, CA</option>
+                </select>
                 <button (click)="applyFilters()" class="btn btn-primary">Apply Filters</button>
             </div>
 
-            <!-- Sorting Controls -->
-            <div class="sorting text-center mb-3">
+            <!-- Sorting Controls NEED TO FIX-->
+            <!-- <div class="sorting text-center mb-3">
                 <select [(ngModel)]="sortCriteria" class="form-control mb-2">
                     <option value="">Sort By</option>
                     <option value="name">Name</option>
@@ -54,7 +70,7 @@
                 <button (click)="toggleSortOrder()" class="btn btn-secondary mb-2">
                     Sort Order: {{ sortOrder === 'asc' ? 'Ascending' : 'Descending' }}
                 </button>
-            </div>
+            </div> -->
         </div>
         <div class="col-9">
             <div class="row">

@@ -1,9 +1,33 @@
-#container{
-  width: auto;
-  height: 60vh;
-  background-image: url(../assets/images/fetchbannernew.jpg);
-  background-position: top;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 50%;
+.navbar.bg-primary {
+  background-color: #426a5a !important;
+  color: #fff;
 }
+
+.navbar.bg-primary .navbar-brand,.navbar.bg-primary .navbar-brand a {
+  color: #fff
+}
+
+.navbar.bg-primary .navbar-nav>.nav-link,.navbar.bg-primary .navbar-nav>.nav-item>.nav-link,.navbar.bg-primary .navbar-nav>.nav>.nav-item>.nav-link {
+  color: #fff
+}
+
+.nav-link {
+  border-radius: 2rem !important;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link.active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+*/

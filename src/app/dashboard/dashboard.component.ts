@@ -19,7 +19,8 @@ export class DashboardComponent {
     breed: '',
     gender: '',
     size: '',
-    color: ''
+    color: '',
+    location: ''
   };
   sortCriteria = '';
   sortOrder: 'asc' | 'desc' = 'asc';
@@ -46,7 +47,8 @@ export class DashboardComponent {
           (!this.filters.breed || dog.breed.toLowerCase().includes(this.filters.breed.toLowerCase())) &&
           (!this.filters.gender || dog.gender === this.filters.gender) &&
           (!this.filters.size || dog.size === this.filters.size) &&
-          (!this.filters.color || dog.color === this.filters.color)
+          (!this.filters.color || dog.color === this.filters.color) &&
+          (!this.filters.location || dog.location === this.filters.location)
       );
     });
 

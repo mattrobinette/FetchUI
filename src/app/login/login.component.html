@@ -1,49 +1,37 @@
-<div class="container">
-  <div>
-    <span style="color: {{resultColor}}">{{ result }}</span>
-  </div>
-  <div>
-    <label for="username">Username : </label>
-    <input [(ngModel)]="username" class="form-control w-25" id="username" placeholder="username">
+<div class="row">
+
+  <div class="container text-center">
+    <span style="color: {{resultColor}}"></span>
   </div>
 
-  <div>
-    <label for="password">Password : </label>
-    <input [(ngModel)]="password" type="password" class="form-control w-25" id="password" placeholder="password">
-  </div>
-
-  <div>
-    <button type="button" class="btn btn-success" (click)="doLogin()">Login</button>
-  </div>
-  <form>
-    <div class="mb-3">
-      <label for="selectToastPlacement">Toast placement</label>
-      <select class="form-select mt-2" id="selectToastPlacement">
-        <option value="" selected>Select a position...</option>
-        <option value="top-0 start-0">Top left</option>
-        <option value="top-0 start-50 translate-middle-x">Top center</option>
-        <option value="top-0 end-0">Top right</option>
-        <option value="top-50 start-0 translate-middle-y">Middle left</option>
-        <option value="top-50 start-50 translate-middle">Middle center</option>
-        <option value="top-50 end-0 translate-middle-y">Middle right</option>
-        <option value="bottom-0 start-0">Bottom left</option>
-        <option value="bottom-0 start-50 translate-middle-x">Bottom center</option>
-        <option value="bottom-0 end-0">Bottom right</option>
-      </select>
-    </div>
-  </form>
-  <div aria-live="polite" aria-atomic="true" class="bg-body-secondary position-relative bd-example-toasts rounded-3">
-    <div class="toast-container p-3" id="toastPlacement">
-      <div class="toast">
-        <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="...">
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </div>
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
+  <!-- Login form -->
+  <div class="col-4 offset-4 my-3">
+    <div class="text-center mb-3">
+      <div class="d-inline-flex align-items-center justify-content-center mb-4 mt-2">
+        <img src="./assets/images/dog-green.svg" class="h-48px" alt="">
       </div>
+      <h5 class="mb-0">Login to your account</h5>
+      <span class="d-block text-muted">Enter your credentials below</span>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input [(ngModel)]="username" class="form-control" id="username" placeholder="Enter Username">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="Enter Password">
+    </div>
+
+    <div class="mb-3">
+      <button type="button" class="btn btn-light w-100" (click)="doLogin()">Login</button>
     </div>
   </div>
+  <!-- /login form -->
+
+  <button class="btn btn-primary" (click)="showToast()">Show Toast</button>
+
+  <app-toast></app-toast>
+
 </div>

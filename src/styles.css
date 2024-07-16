@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #f8f9fa;
+  background-color: #fff;
   color: #1a1a1a;
 }
 
@@ -81,50 +81,6 @@ label.required:after {
   padding-top: 0;
 }
 
-.second-nav {
-  height: 2.75rem;
-}
-
-.second-nav .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.second-nav .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: .875rem;
-  color: #6c757d;
-}
-
-.second-nav .nav-link:hover {
-  color: #0c6e14;
-}
-
-.second-nav .active {
-  font-weight: 500;
-  color: #343a40;
-}
-
-.navbar.bg-primary {
-  background-color: #046722 !important;
-  color: #fff;
-}
-
-.navbar.bg-primary .navbar-brand,.navbar.bg-primary .navbar-brand a {
-  color: #fff
-}
-
-.navbar.bg-primary .navbar-nav>.nav-link,.navbar.bg-primary .navbar-nav>.nav-item>.nav-link,.navbar.bg-primary .navbar-nav>.nav>.nav-item>.nav-link {
-  color: #fff
-}
-
 .btn-white {
   background-color: #fff;
   color: #4e2d7f;
@@ -137,4 +93,39 @@ label.required:after {
 
 .pointer {
   cursor: pointer;
+}
+
+.page {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.page-small {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bg-section {
+  background-color: #f7f7f8;
+}
+
+.bg-grey {
+  background-color: #f5f9fa;
+}
+
+.bg-green-light {
+  background-color: #e6f0e9;
+}
+
+.bg-green {
+  background-color: #426a5a;
+}
+
+.active-link {
+  color: red !important;
 }

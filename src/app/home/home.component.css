@@ -1,0 +1,25 @@
+#cta-1 {
+  background: url(http://localhost:4200/media/fetchbannernew.jpg);
+  background-size: cover;
+  background-position: 10% 40%;
+}
+
+.carousel-inner {
+  height: 217px;
+  padding-bottom: 25%; /* this sets carousel aspect ratio (4:1 here) */
+}
+
+.carousel-item {
+  position: absolute !important; /* Bootstrap is insistent */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item img {
+  height: 100%; /* Bootstrap handles width already */
+  object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+}
+
+/* https://stackoverflow.com/questions/73561420/how-to-make-images-the-same-height-in-a-bootstrap-5-carousel */
