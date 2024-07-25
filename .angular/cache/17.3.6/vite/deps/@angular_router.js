@@ -2026,8 +2026,8 @@ function validateNode(route, fullPath, requireStandaloneComponents) {
 
       Example:
       const routes: Routes = [
-        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-        { path: 'dashboard',  component: DashboardComponent },, << two commas
+        { path: '', redirectTo: '/browse', pathMatch: 'full' },
+        { path: 'browse',  component: browseComponent },, << two commas
         { path: 'detail/:id', component: HeroDetailComponent }
       ];
     `);

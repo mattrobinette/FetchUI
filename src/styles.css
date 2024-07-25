@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #fff;
+  background-color: #f9f9f9;
   color: #1a1a1a;
 }
 
@@ -110,6 +110,10 @@ label.required:after {
   padding-bottom: 2rem;
 }
 
+.bg-white {
+  background-color: #fff;
+}
+
 .bg-section {
   background-color: #f7f7f8;
 }
@@ -128,4 +132,12 @@ label.required:after {
 
 .active-link {
   color: red !important;
+}
+
+.card {
+  border-radius: .375rem;
+  box-shadow: 0 .125rem .25rem rgba(165,163,174,.3)
+}
+.bg-light {
+  background-color: #F9F9F9 !important;
 }

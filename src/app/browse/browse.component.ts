@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { dog } from '../dog';
 import { dogService } from '../dog.service';
-import { NgFor } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgFor, RouterLink, ReactiveFormsModule, FormsModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  imports: [NgIf, NgFor, RouterLink, ReactiveFormsModule, FormsModule],
+  templateUrl: './browse.component.html',
+  styleUrl: './browse.component.css'
 })
-export class DashboardComponent {
+export class BrowseComponent {
   dogs: dog[] = [];
   filteredDogs: dog[] = [];
   filters = {
@@ -29,6 +29,8 @@ export class DashboardComponent {
   currentPage = 0;
   pageSize = 10;
   pageCount = 0;
+
+  baseUrl: string = 'http://localhost:3000/static/dogs/image-uploads/';
 
   constructor(private dogService: dogService) {}
 

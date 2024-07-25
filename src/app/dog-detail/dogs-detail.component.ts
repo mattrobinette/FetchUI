@@ -1,7 +1,6 @@
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
-import { NgFor } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { dog } from '../dog';
 import { FormsModule } from '@angular/forms';
 import { dogService } from '../dog.service';
