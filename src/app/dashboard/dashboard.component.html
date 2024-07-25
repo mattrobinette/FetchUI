@@ -57,9 +57,10 @@
                 </select>
                 <button (click)="applyFilters()" class="btn btn-primary">Apply Filters</button>
             </div>
+        </div>
 
-            <!-- Sorting Controls NEED TO FIX-->
-            <!-- <div class="sorting text-center mb-3">
+        <!-- Sorting Controls NEED TO FIX-->
+        <!-- <div class="sorting text-center mb-3">
                 <select [(ngModel)]="sortCriteria" class="form-control mb-2">
                     <option value="">Sort By</option>
                     <option value="name">Name</option>
@@ -71,8 +72,35 @@
                     Sort Order: {{ sortOrder === 'asc' ? 'Ascending' : 'Descending' }}
                 </button>
             </div> -->
-        </div>
+        <!-- </div> -->
+    
         <div class="col-9">
+            <div class="row">
+                <div class="card mb-3" style="max-width: 650px" *ngFor="let dog of currentPageDogs">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/images/adopt1.jpg" class="img-fluid rounded-start" alt="Dog">
+                        </div>
+                        
+                        <div class="col-8">
+                            <p>Name: {{ dog.name }}</p>
+                            <p>Breed: {{ dog.breed }}</p>
+                            <p>Location: {{ dog.location }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap">
+                    <button type="button" (click)="previousPage()" class="btn btn-light"><i
+                            class="bi bi-chevron-left me-1"></i> Prev</button>
+                    <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
+                    <button type="button" (click)="nextPage()" class="btn btn-light">Next <i
+                            class="bi bi-chevron-right ms-1"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-9">
             <div class="row">
                 <table class="table">
                     <thead>
@@ -99,14 +127,15 @@
                         <td>{{ dog.photos ? 'Yes' : 'No'}}</td>
                     </tr>
                     </tbody>
-                </table>
-                <div class="d-flex align-items-center justify-content-between flex-wrap">
-                    <button type="button" (click)="previousPage()" class="btn btn-light"><i class="bi bi-chevron-left me-1"></i> Prev</button>
-                    <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
-                    <button type="button" (click)="nextPage()" class="btn btn-light">Next <i class="bi bi-chevron-right ms-1"></i></button>
-                </div>
-            </div>
-        </div>
+                </table> -->
+        <!-- <div class="d-flex align-items-center justify-content-between flex-wrap">
+            <button type="button" (click)="previousPage()" class="btn btn-light"><i class="bi bi-chevron-left me-1"></i>
+                Prev</button>
+            <div>Page {{ currentPage + 1 }} of {{ pageCount }}</div>
+            <button type="button" (click)="nextPage()" class="btn btn-light">Next <i
+                    class="bi bi-chevron-right ms-1"></i></button>
+        </div> -->
     </div>
-
 </div>
+
+<!-- </div> -->
