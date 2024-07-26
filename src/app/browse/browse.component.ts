@@ -27,7 +27,7 @@ export class BrowseComponent {
 
   currentPageDogs: dog[] = [];
   currentPage = 0;
-  pageSize = 10;
+  pageSize = 9;
   pageCount = 0;
 
   baseUrl: string = 'http://localhost:3000/static/dogs/image-uploads/';

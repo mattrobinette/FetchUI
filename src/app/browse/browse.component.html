@@ -76,35 +76,33 @@
         <!-- </div> -->
     
         <div class="col-9">
-            <div class="card mb-3 border-0" *ngFor="let dog of currentPageDogs">
-                <div class="row g-0">
-                    <div class="col-md-4">
+
+            <div class="row g-3">
+                <div class="col-4" *ngFor="let dog of currentPageDogs">
+                    <div class="card hover-border">
                         <ng-container *ngIf="dog.photos && dog.photos.length > 0; else placeholder">
-                            <img [src]="baseUrl + dog.photos[0]" class="img-fluid rounded-start" alt="Dog" width="350" height="250">
+                            <img [src]="baseUrl + dog.photos[0]" class="img-fit" alt="Dog">
                         </ng-container>
                         <ng-template #placeholder>
-                            <img src="https://placehold.co/600x400.png" class="img-fluid rounded-start h-100" alt="Dog">
+                            <img src="https://placehold.co/600x400.png" class="img-fit" alt="Dog">
                         </ng-template>
-                    </div>
 
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ dog.name }}</h4>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ dog.name }}</h5>
                             <div class="row">
-                                <ul class="col-sm-4 list-unstyled">
+                                <ul class="list-unstyled">
                                     <li>{{ dog.age }} years old</li>
                                     <li>{{ dog.breed }}</li>
                                     <li>{{ dog.gender }}</li>
-                                </ul>
-                                <ul class="col-sm-4 list-unstyled">
                                     <li>{{ dog.temperament }}</li>
                                 </ul>
                             </div>
-
+                            <a href="#" class="btn btn-primary">Adopt</a>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="d-flex align-items-center justify-content-between flex-wrap">
                     <button type="button" (click)="previousPage()" class="btn btn-light"><i

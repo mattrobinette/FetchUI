@@ -141,3 +141,11 @@ label.required:after {
 .bg-light {
   background-color: #F9F9F9 !important;
 }
+
+.hover-border {
+  border: 10px solid transparent;
+}
+
+.hover-border:hover {
+  border: 10px solid #0bbb3d;
+}
